@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 void print_calendar(int num_days, int first_sun) {
     int row = num_days/7 + 1;
     int day = 1;
