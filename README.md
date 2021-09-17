@@ -1,2 +1,2 @@
 # publicCode
-Code for others to view for easy sharing purposes.
+Public repository for others to view certain code snippets.
