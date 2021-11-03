@@ -7,7 +7,7 @@ void print_array(int row, int column, char arr[row][column]);
 void print_dancing_string(char *string, char ch) {
     char arr[3][strlen(string)+2];
 
-    for(int i = 0; i < 3; i++) {
+    for(int i = 0; i < 3; i++) { //Creates the "box" and fills everything up with spaces
         for(int j = 0; j < strlen(string)+2; j++) {
             if(j == 0 || j == strlen(string)+1) {
                 arr[i][j] = '|';
@@ -17,20 +17,20 @@ void print_dancing_string(char *string, char ch) {
         }
     }
 
-    int row = 0;
+    int row = 0; //Check which row it starts from
     if(ch == 'M') {
         row = 1;
     } else if (ch == 'B') {
         row = 2;
     }
 
-    bool up = true;
-    int column = 1;
+    bool up = true; //For direction
+    int column = 1; //Column counter
     
     for(int i = 0; i < strlen(string); i++) {
         arr[row][column] = string[i];
 
-        if(row == 0) {
+        if(row == 0) { //This entire IF block changes row depending on what number row is
             row++;
             up = false;
         } else if (row == 1 && up == true) {
@@ -43,7 +43,7 @@ void print_dancing_string(char *string, char ch) {
         }
         column++;
     }
-    print_array(3, strlen(string)+2, arr);
+    print_array(3, strlen(string)+2, arr); //Prints the 2D array
 }
 
 void print_array(int row, int column, char arr[row][column]) {
